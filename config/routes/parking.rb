@@ -7,7 +7,7 @@ scope module: :parking, defaults: { format: :json } do
     end
 
     member do
-      get :show
+      get :show, controller: '/api/v1/parking'
       post :out, controller: '/api/v1/parking'
       post :pay, controller: '/api/v1/parking'
     end
