@@ -1,21 +1,23 @@
 FROM ruby:2.6.3-alpine
-LABEL maintainer="Kariuki Gathitu <kgathi2@gmail.com>"
-LABEL version="1.0"
+
+RUN apk update && \
+  apk upgrade && \
+  apk add --no-cache tzdata
 
 ENV BUILD_PACKAGES="curl-dev ruby-dev build-base bash" \
   DEV_PACKAGES="zlib-dev libxml2-dev libxslt-dev tzdata yaml-dev" \
   DB_PACKAGES="postgresql-dev postgresql-client" \
-  RUBY_PACKAGES="ruby-json yaml nodejs"
+  RUBY_PACKAGES="ruby-json yaml nodejs" \
+  TZ="America/Sao_Paulo"
 
-RUN apk update && \
-  apk upgrade && \
-  apk add --update\
+RUN apk add --update \
   $BUILD_PACKAGES \
   $DEV_PACKAGES \
   $DB_PACKAGES \
   $RUBY_PACKAGES && \
   rm -rf /var/cache/apk/* && \
-  mkdir -p /usr/src/app
+  mkdir -p /usr/src/app && \
+  ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN addgroup -S admin -g 1000 && adduser -S -g '' -u 1000 -G admin deploy
 
