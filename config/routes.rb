@@ -1,3 +1,11 @@
+class ActionDispatch::Routing::Mapper
+  def draw(*routes_files_names)
+    routes_files_names.each do |route_file_name|
+      instance_eval(File.read(Rails.root.join("config/routes/#{route_file_name}.rb")))
+    end
+  end
+end
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  draw(:parking)
 end
