@@ -1,0 +1,11 @@
+**/.git*
+**/*.sqlite3
+**/*.sqlite3-journal
+log/*
+tmp/*
+storage/*
+**/README.md
+
+secrets/*
+**/docker-compose.yml
+**/Dockerfile
