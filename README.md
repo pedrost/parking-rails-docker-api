@@ -14,7 +14,7 @@ Rails Parking app it is a simple API to register entries and outs of parkings us
 
 ## Usage
 * Deploy app by running `sudo docker-compose up`
-* App must be runing on `localhost:80`
+* App must be runing on `localhost:3000`
 
 ## API Docs
 You can find the Postman Docs for this app [here](https://documenter.getpostman.com/view/11534037/SztBa7c9?version=latest)
