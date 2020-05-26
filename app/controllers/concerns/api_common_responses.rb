@@ -5,8 +5,8 @@ module ApiCommonResponses
     render json: data, status: :ok
   end
 
-  def render_created
-    render json: { status: 201 }, status: :created
+  def render_created(data = {})
+    render json: data, status: :created
   end
 
   def render_unprocessable_entity_error(resource = nil)
