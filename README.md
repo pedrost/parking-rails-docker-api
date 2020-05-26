@@ -1,24 +1,20 @@
-# README
+# - Parking app - Teste MLabs
+Rails Parking app it is a simple API to register entries and outs of parkings using ruby on rails. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker-compose](https://docs.docker.com/compose/install/)
 
-Things you may want to cover:
+## Setup app
+* First run `sudo docker-compose build` to setup containers
+* Then run `sudo docker-compose run app bundle exec rake db:create db:migrate --trace` to setup database
 
-* Ruby version
+## Running specs 
+* Just run `sudo docker-compose run app bundle exec rspec`
 
-* System dependencies
+## Usage
+* Deploy app by running `sudo docker-compose up`
+* App must be runing on `localhost:80`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## API Docs
+You can find the Postman Docs for this app [here](https://documenter.getpostman.com/view/11534037/SztBa7c9?version=latest)
