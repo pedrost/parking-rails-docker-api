@@ -1,8 +1,6 @@
 class Api::ApiController < ActionController::API
   include ApiCommonResponses
 
-  respond_to :json
-
   protected
 
   def serialize_resource(resource, serializer, scope: nil)
