@@ -3,7 +3,8 @@ class Api::V1::ParkingController < Api::ApiController
   before_action :find_parking, only: [:show, :out, :pay]
 
   def index
-    return render json: Parking.all, status: :ok
+    @parkings = Parking.all
+    return render json: @parkings, status: :ok
   end
 
   def show
@@ -12,7 +13,7 @@ class Api::V1::ParkingController < Api::ApiController
 
   def create
     parking = Parking.new(parking_params)
-    return render_success({ reserve_number: parking.id }) if parking.save
+    return render_created({ reserve_number: parking.id }) if parking.save
     render_unprocessable_entity_error(parking.errors.full_messages)
   end
 
