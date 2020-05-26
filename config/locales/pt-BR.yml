@@ -1,3 +1,17 @@
 pt-BR:
   tz:
     minutes: "minutos"
+  activerecord:
+    attributes:
+      parking:
+        left: Saída
+        plate: Placa
+    errors:
+      models:
+        parking:
+          attributes:
+            left:
+              not_paid: Entrada ainda não foi paga
+            plate:
+              taken: já existe
+              invalid: inválida, formato deve ser igual á AAA-0000

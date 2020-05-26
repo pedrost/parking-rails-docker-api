@@ -1,3 +1,17 @@
 en:
   tz:
     minutes: "minutes"
+  activerecord:
+    attributes:
+      parking:
+        left: Out
+        plate: Plate
+    errors:
+      models:
+        parking:
+          attributes:
+            left:
+              not_paid: Entry not paid yet
+            plate:
+              taken: already exists
+              invalid: invalid, format must be equal AAA-0000
