@@ -8,8 +8,8 @@ scope module: :parking, defaults: { format: :json } do
 
     member do
       get :show, controller: '/api/v1/parking'
-      post :out, controller: '/api/v1/parking'
-      post :pay, controller: '/api/v1/parking'
+      put :out, controller: '/api/v1/parking'
+      put :pay, controller: '/api/v1/parking'
     end
   end
 
