@@ -1,4 +1,4 @@
-# - Parking app - Teste MLabs
+# - Parking API
 Rails Parking app it is a simple API to register entries and outs of parkings using ruby on rails. 
 
 ## Dependencies
