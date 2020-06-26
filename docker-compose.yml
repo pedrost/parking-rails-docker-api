@@ -5,8 +5,7 @@ services:
     command: "bundle exec puma"
     stdin_open: true
     tty: true
-    environment:
-      - RAILS_ENV=development
+    env_file: .env
     ports:
       - "3000:3000"
     links:
@@ -16,8 +15,6 @@ services:
 
   postgres:
     image: postgres:9.6.2-alpine
-    environment:
-      - POSTGRES_PASSWORD=mysecretpassword
     ports:
       - "5432"
     volumes:
