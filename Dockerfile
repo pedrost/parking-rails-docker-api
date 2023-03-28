@@ -28,18 +28,15 @@ ENV RAILS_ENV production
 RUN mkdir -p $RAILS_ROOT
 WORKDIR $RAILS_ROOT
 
-COPY . ./
-
-RUN chown deploy:admin -R app/ 
+COPY Gemfile Gemfile.lock .
 
 USER deploy
 
 ENTRYPOINT ["./entrypoint.sh"]
 
 RUN gem install bundler
-RUN bundle install --jobs 20 --retry 5
+RUN bundle install
 
+COPY . ./
 
 EXPOSE 3000
-
-CMD ["bundle exec puma"]
